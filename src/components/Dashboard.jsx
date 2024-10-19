@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./Dashboard.css";
 import { FaEdit, FaTrashAlt, FaPlus } from "react-icons/fa";
+import { MdExploreOff } from "react-icons/md";
 
 const Dashboard = () => {
   const [days, setDays] = useState(["Day 1"]);
@@ -104,6 +105,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
+      <nav className="navbar">
+        <h1 className="navbar-title"> KanbanX</h1>
+      </nav>
       <select
         value={currentDay}
         onChange={(e) => setCurrentDay(e.target.value)}
@@ -126,7 +130,7 @@ const Dashboard = () => {
           placeholder="Add a new task"
         />
         <button className="add-task-icon" onClick={handleAddTask}>
-          <FaPlus  /> Add Task
+          <FaPlus /> Add Task
         </button>
       </div>
 
@@ -179,5 +183,4 @@ const Dashboard = () => {
     </div>
   );
 };
-
 export default Dashboard;

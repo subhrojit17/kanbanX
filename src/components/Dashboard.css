@@ -1,125 +1,133 @@
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(135deg, #002f5d, #cfe2f3);
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  .kanban-board {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-  }
-  
-  .kanban-column {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #0056b3;
-    border-radius: 6px;
-    width: 30%;
-    padding: 10px;
-    margin: 0 10px;
-    position: relative;
-  }
-  
-  h3 {
-    text-transform: capitalize;
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  .kanban-task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .task-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .edit-icon,
-  .delete-icon {
-    cursor: pointer;
-    color: #ffffff;
-    transition: color 0.2s ease;
-  }
-  
-  .edit-icon:hover,
-  .delete-icon:hover {
-    color: #0056b3;
-  }
-  
-  .kanban-task.dragging {
-    background: rgba(0, 123, 255, 0.9);
-    color: white;
-    transform: scale(1.05);
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .task-input {
-    display: flex;
-    margin: 20px 0;
-  }
-  
-  .task-input input {
-    padding: 10px;
-    border: 1px solid #cccccc39;
-    border-radius: 4px;
-    margin-right: 10px;
-    flex: 1;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-  }
-  
-  .task-input input::placeholder {
-    color: #dddddd;
-  }
-  
-  .add-day-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    margin-top: 10px;
-    padding: 5px 5px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-    font-size: 14px;
-  }
-  
-  .add-day-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .add-day-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-  }
-  
-  button {
-    border-radius: 5px;
-    box-shadow: 0 0 2px black;
-  }
-  
-  .add-task-icon:hover {
-    background-color: rgba(234, 229, 229, 0.942);
-  }
-  
-  .add-task-icon {
-    background-color: white;
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #002f5d, #cfe2f3);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.kanban-column {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #f5f6f713;
+  box-shadow: 0 2px 10px #0000001b;
+
+  border-radius: 6px;
+  width: 30%;
+  padding: 10px;
+  margin: 0 10px;
+  position: relative;
+}
+
+h3 {
+  text-transform: capitalize;
+  color: #ffffff;
+  text-align: center;
+}
+
+.kanban-task {
+  overflow:hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  margin: 3px;
+  background: rgba(0, 123, 255, 0.9);
+  color: white;
+
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+  color: #010912;
+}
+
+.kanban-task.dragging {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.task-input {
+  display: flex;
+  margin: 20px 0;
+}
+
+.task-input input {
+  padding: 10px;
+  border: 1px solid #cccccc39;
+  border-radius: 4px;
+  margin-right: 10px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.task-input input::placeholder {
+  color: #dddddd;
+}
+
+.add-day-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 14px;
+}
+
+.add-day-button:hover {
+  background-color: #0056b3;
+}
+
+.add-day-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  border-radius: 5px;
+  box-shadow: 0 0 2px black;
+}
+
+.add-task-icon:hover {
+  background-color: rgba(234, 229, 229, 0.942);
+}
+
+.add-task-icon {
+  background-color: rgba(255, 255, 255, 0.262);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}

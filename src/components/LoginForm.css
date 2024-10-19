@@ -1,3 +1,4 @@
+/* General styling for the login page */
 .login-container {
   display: flex;
   justify-content: center;
@@ -5,7 +6,12 @@
   height: 100vh;
   background: linear-gradient(135deg, #002f5d, #cfe2f3);
 }
-
+h1 {
+  color: white;
+  text-align: center;
+  margin: 4px 0px 40px 0px;
+  text-shadow: 0 0 2px black;
+}
 .login-form {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -15,54 +21,62 @@
   width: 400px;
 }
 
-h1 {
-  text-align: center;
-  color: #ffffff;
-  font-size: xx-large;
-}
-
-.form-group {
-  margin-right: 2rem;
+/* Floating label container */
+.input-container {
+  position: relative;
   margin-bottom: 20px;
 }
 
-label {
-  color: #ffffff;
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+.input-icon {
+  position: absolute;
+  right: 20px;
+  color: white;
+  padding-right: 0px;
+  font-size: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cccccc39;
+  width: 95%;
+  padding: 15px 0px 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background: transparent;
-  box-shadow: 0 0 3px black;
-  color: #333;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 0 1px black;
 }
 
 input::placeholder {
-  color: rgb(255, 255, 255);
+  color: transparent; /* Hide the default placeholder */
 }
 
-.forgot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+/* Floating label */
+.floating-label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.832);
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-.forgot-password {
-  color: #ffffff;
-  text-decoration: none;
+input:focus ~ .floating-label,
+input:not(:placeholder-shown) ~ .floating-label {
+  font-weight: 600;
+  top: -10px;
+  font-size: 0.75rem;
+  color: white;
+  text-shadow: 0 0 2px black;
 }
 
-.forgot-password:hover {
-  text-decoration: underline;
+input:focus {
+  outline: none;
+  border: transparent;
+  background: rgba(255, 255, 255, 0.2);
 }
-
 .login-button {
   width: 100%;
   background: #007bff;
@@ -71,14 +85,21 @@ input::placeholder {
   border: none;
   border-radius: 4px;
   padding: 10px;
+  font-size: large;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
+.button-icon {
+  color: white;
+  font-size: 1rem;
+  margin-left: 5px;
+  text-align: center;
+}
 .login-button:hover {
   background: #0056b3;
 }
 
+/* Error message styling */
 .error-message {
   color: #ff4d4d;
   text-align: center;
